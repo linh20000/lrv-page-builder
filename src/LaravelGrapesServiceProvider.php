@@ -4,7 +4,6 @@ namespace MSA\LaravelGrapes;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use MSA\LaravelGrapes\Middleware\HandleInertiaRequests;
 use MSA\LaravelGrapes\Interfaces\PageRepositoryInterface;
 use MSA\LaravelGrapes\Repositories\PageRepository;
 use MSA\LaravelGrapes\Interfaces\BlockRepositoryInterface;
@@ -65,7 +64,7 @@ class LaravelGrapesServiceProvider extends ServiceProvider
     {
         return [
             'prefix' => config('lg.builder_prefix'),
-            'middleware' => null,
+            'middleware' => config('lg.middleware'),
         ];
     }
 
@@ -77,3 +76,4 @@ class LaravelGrapesServiceProvider extends ServiceProvider
         ];
     }
 }
+

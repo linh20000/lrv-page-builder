@@ -1,8 +1,10 @@
 <?php
 
+use MSA\LaravelGrapes\Http\Controllers\BlockController;
+use MSA\LaravelGrapes\Http\Controllers\PageController;
 return [
     // routes configurations
-    'builder_prefix' => 'hello', // prefix for builder
+    'builder_prefix' => '', // prefix for builder
 
     'middleware' => null, // middleware for builder
 
@@ -10,5 +12,11 @@ return [
 
     /* Define additional translation languages. */
     'languages' => [],
+
+    // default or extend controllers
+    'controllers' => [
+        'page' => PageController::class,
+        'block' => BlockController::class,
+    ]
 
 ];
